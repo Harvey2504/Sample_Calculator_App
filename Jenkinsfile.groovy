@@ -40,7 +40,7 @@ pipeline{
                 script{
                     last_started=env.STAGE_NAME
                 }
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('maven-package'){
