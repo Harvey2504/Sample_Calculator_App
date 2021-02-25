@@ -69,6 +69,16 @@ pipeline{
                 }
             }
         }
+        stage("Quality Gate") {
+            steps {
+                script{
+                    last_started=env.STAGE_NAME
+                }
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
         stage('collect-artifacts'){
             steps{
                 script{
