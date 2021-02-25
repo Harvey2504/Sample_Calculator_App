@@ -69,7 +69,7 @@ pipeline{
                 }
             }
         }
-        stage("Quality Gate") {
+        stage("quality-gate") {
             steps {
                 script{
                     last_started=env.STAGE_NAME
