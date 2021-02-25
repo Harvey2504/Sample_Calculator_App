@@ -96,7 +96,8 @@ pipeline{
                     buildNumber: '1'
                 )
             }
-        }
+        }    
+    }
         post{
             failure{
                 mail bcc: '', body: "<b>Failure</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br>Stage Name: $last_started <br> URL de build: ${env.BUILD_URL}", cc: '', charset: 'UTF-8', from: '', mimeType: 'text/html', replyTo: '', subject: "CI Pipeline Info: Project name -> ${env.JOB_NAME}", to: "samalati96@gmail.com";
@@ -106,4 +107,3 @@ pipeline{
 
 
     }
-}
