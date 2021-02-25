@@ -122,7 +122,7 @@ pipeline{
                     last_started=env.STAGE_NAME
                 }
                 sshagent(['a71d2757-34ac-4b7a-85fa-2d4c1a688e12']){
-                    bat 'scp -r C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/jobs/ContinuousIntegrationPipeline/artifacts/*.jar ubuntu@18.223.184.191:/home/ubuntu/artifacts'
+                    bat 'scp -r C:/Windows/System32/config/systemprofile/AppData/Local/Jenkins/.jenkins/workspace/ContinuousIntegrationPipeline/artifacts/*.jar ubuntu@18.223.184.191:/home/ubuntu/artifacts'
         }
             }
         } 
